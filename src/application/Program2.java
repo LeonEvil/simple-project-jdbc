@@ -24,10 +24,10 @@ public class Program2 {
 		}
 		
 		System.out.println("\n=== TEST 3: department insert ===");
-		Department department2 = new Department(null, "security");
-		departmentDao.insert(department2);
-		System.out.println("Inserted! New id: " + department2.getId());
-		System.out.println(department2);
+		department = new Department(null, "security");
+		departmentDao.insert(department);
+		System.out.println("Inserted! New id: " + department.getId());
+		System.out.println(department);
 		
 		System.out.println("\n=== TEST 4: department update ===");
 		department = departmentDao.findById(10);
@@ -35,6 +35,12 @@ public class Program2 {
 		departmentDao.update(department);
 		System.out.println("Update completed");
 		System.out.println(department);
+		
+		System.out.println("\n=== TEST 5: department delete ===");
+		System.out.println("Enter id for delete test: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete completed");
 		
 		sc.close();
 	}
