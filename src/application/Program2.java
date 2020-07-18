@@ -29,6 +29,13 @@ public class Program2 {
 		System.out.println("Inserted! New id: " + department2.getId());
 		System.out.println(department2);
 		
+		System.out.println("\n=== TEST 4: department update ===");
+		department = departmentDao.findById(10);
+		department.setName("digital security");
+		departmentDao.update(department);
+		System.out.println("Update completed");
+		System.out.println(department);
+		
 		sc.close();
 	}
 }
